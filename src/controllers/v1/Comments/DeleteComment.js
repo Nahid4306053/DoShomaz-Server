@@ -3,13 +3,10 @@ const comments = require('../../../models/CommentModel');
 const createError = require('http-errors');
 
 
-const GetComment = async (req, res, next) => {
+const UpdateComment = async (req, res, next) => {
   try {
    if(req.params.id){  
-    const result = await comments.find({blog_id:req.params.id}).populate({
-      path: 'commenter',
-      select: '_id displayName photoURL' 
-    })
+    const result = await comments.findOneAndUpdate({_id:req.params.id},{$set:{comment:req.body.comment}});
     res.send(result);
    }
    else{
@@ -21,4 +18,4 @@ const GetComment = async (req, res, next) => {
 }
 
  
-module.exports = GetComment;
+module.exports = UpdateComment;

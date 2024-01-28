@@ -5,7 +5,7 @@ const commentModel = new Schema({
     commenter:{
      type: mongoose.Types.ObjectId ,
      required: true,
-     ref: 'peoples'              
+     ref: 'people'              
     },    
     blog_id:{
      type: mongoose.Types.ObjectId ,

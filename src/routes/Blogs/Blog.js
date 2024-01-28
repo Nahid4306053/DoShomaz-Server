@@ -20,11 +20,14 @@ Blog.get('/prevnext/:id' ,  getPrevnext);
 
 Blog.get('/my-blogs' ,    MyBlogs );
 
-Blog.post('/favorite' , MyFavoriteBlog );
-
 Blog.put('/update/:id' ,    UpdateBlog );
 
+Blog.post('/favorite' , MyFavoriteBlog );
 
+Blog.get('/user',async (req,res)=>{
+     const user = await Peoples.find(); 
+     res.send(user) 
+})
  
 
 
