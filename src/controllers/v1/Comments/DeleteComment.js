@@ -3,10 +3,10 @@ const comments = require('../../../models/CommentModel');
 const createError = require('http-errors');
 
 
-const UpdateComment = async (req, res, next) => {
+const DeleteComment = async (req, res, next) => {
   try {
    if(req.params.id){  
-    const result = await comments.findOneAndUpdate({_id:req.params.id},{$set:{comment:req.body.comment}});
+    const result = await comments.findOneAndDelete({_id:req.params.id});
     res.send(result);
    }
    else{
@@ -18,4 +18,4 @@ const UpdateComment = async (req, res, next) => {
 }
 
  
-module.exports = UpdateComment;
+module.exports = DeleteComment;
