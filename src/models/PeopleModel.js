@@ -27,12 +27,12 @@ const PeopleModel = new Schema({
       default:"user"
      } ,
      additionalInfo :{
-        type:String ,                  
+        type:String ,                   
      }            
 },{
      timestamps:true
 })
 
-const Peoples = new model('Peoples',PeopleModel)
+const Peoples = new model('people',PeopleModel)
 
-module.exports = Peoples;
+module.exports = Peoples; 

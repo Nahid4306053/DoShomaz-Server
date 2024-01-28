@@ -3,8 +3,8 @@ const createError = require('http-errors');
 const Blogs = require('../../../models/BlogModel');
 const AddBlog = async (req,res,next)=>{
  try{
-  const author = req.CurrentUser._id
-  const result = await Blogs({...req.body , author : author}).save() ;
+ 
+  const result = await Blogs({...req.body}).save() ;
   res.send(result);
  
  }catch(err){

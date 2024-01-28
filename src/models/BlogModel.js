@@ -5,30 +5,22 @@ const BlogModel = new mongoose.Schema({
     type: String,
     required: true,
   },
-  categorey: {
-    type: String,
-    required: true,
-  },
   title: {
     type: String,
     required: true,
   },
-  description: {
+  body: {
     type: String,
     required: true,
   },
   author: {
     type: mongoose.Types.ObjectId,
-    ref : 'Peoples',
+    ref: 'people',
     required: true,
   },
-  views:[
-    {
-      user_id: mongoose.Types.ObjectId , 
-    }
-  ]
-},{
-  timestamps:true,
+  views: []
+}, {
+  timestamps: true,
 });
 
 const Blogs = new mongoose.model('blogs', BlogModel);
