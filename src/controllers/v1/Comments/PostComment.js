@@ -7,7 +7,6 @@ const PostComment = async (req, res, next) => {
   try {
    const {blog_id} = req.body;  
    if(blog_id){ 
-    req.body.commenter = req.CurrentUser._id; 
     const savedata = await Comments(req.body).save();
     res.send(savedata);
    }

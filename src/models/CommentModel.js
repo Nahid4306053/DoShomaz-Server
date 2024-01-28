@@ -5,7 +5,7 @@ const commentModel = new Schema({
     commenter:{
      type: mongoose.Types.ObjectId ,
      required: true,
-     ref: 'Peoples'              
+     ref: 'peoples'              
     },    
     blog_id:{
      type: mongoose.Types.ObjectId ,
@@ -15,22 +15,7 @@ const commentModel = new Schema({
     comment:{
      type: String,
      required: true,            
-    },
-    replays:[
-      {
-        replayer:{
-          type: mongoose.Types.ObjectId,
-          ref: 'Peoples' 
-        },
-        replay:{
-          type : String
-        },
-        date:{
-          type : Date,
-          default : Date.now
-        }
-      }
-    ]               
+    },            
 },
 {
   timestamps: true

@@ -1,6 +1,7 @@
 const AddBlog = require('../../controllers/v1/Blogs/AddBlog');
 const MyBlogs = require('../../controllers/v1/Blogs/MyBlogs');
 const getBlogs = require('../../controllers/v1/Blogs/getBlogs');
+const MyFavoriteBlog = require('../../controllers/v1/Blogs/MyFavoriteBlog');
 const getSingelBlog = require('../../controllers/v1/Blogs/getSingelBlogs');
 const getPrevnext = require('../../controllers/v1/Blogs/Prevnext');
 const UpdateBlog = require('../../controllers/v1/Blogs/UpdateBlog');
@@ -18,6 +19,8 @@ Blog.get('/singel/:id' , getSingelBlog );
 Blog.get('/prevnext/:id' ,  getPrevnext);
 
 Blog.get('/my-blogs' ,    MyBlogs );
+
+Blog.post('/favorite' , MyFavoriteBlog );
 
 Blog.put('/update/:id' ,    UpdateBlog );
 
