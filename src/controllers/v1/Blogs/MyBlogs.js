@@ -8,7 +8,7 @@ const MyBlogs = async (req,res,next)=>{
 
   const totalData = await Blogs.countDocuments();
  
-  const result = await  Blogs.find().sort({createdAt: -1}).skip((page-1) * limit).limit(limit)
+  const result = await  Blogs.find().sort({"createdAt": -1}).skip((page-1) * limit).limit(limit)
   res.json({totalData:totalData , Blogs : result});
 
  }catch(err){

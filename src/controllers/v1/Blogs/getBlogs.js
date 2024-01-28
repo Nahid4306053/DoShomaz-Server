@@ -13,15 +13,9 @@ const getBlogs = async (req,res,next)=>{
   if(req.query.categorey){
    query.categorey = req.query.categorey;
   }  
-  if(req.query.sort){
-    sort.createdAt = -1
-  }
-  if(req.query.random){
-   const randomIndexes = Array.from({ length: 5 }, () => Math.floor(Math.random() * totalDocsCount));
-    skip 
-  }
+
   const totalData = await Blogs.countDocuments(query);
-  const result = await  Blogs.find(query).skip((page-1) * limit).sort(sort).limit(limit).populate({path:"author",select:"_id displayName photoURL"});
+  const result = await  Blogs.find(query).skip((page-1) * limit).sort({"createdAt": -1}).limit(limit).populate({path:"author",select:"_id displayName photoURL"});
   res.json({totalData:totalData , Blogs : result});
  
  }
