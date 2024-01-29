@@ -16,8 +16,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [process.env.ORIGIN,'https://eshomaz.netlify.app'],
-    credentials: true, // Allow credentials (cookies, authorization headers)
+    origin: [process.env.ORIGIN,'https://doshomaz.netlify.app'],
   })
 );
 
